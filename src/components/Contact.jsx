@@ -9,6 +9,62 @@ const Contact = ({ isPage = false }) => {
         }
     }, [isPage]);
 
+    const [formData, setFormData] = React.useState({
+        fullName: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+    });
+
+    const [status, setStatus] = React.useState(''); // '', 'sending', 'success', 'error'
+
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [id]: value
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('sending');
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/arshadbavam@gmail.com", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: formData.fullName,
+                    email: formData.email,
+                    phone: formData.phone,
+                    subject: formData.subject || 'New Contact Request',
+                    message: formData.message,
+                    _subject: `New Inquiry: ${formData.subject || 'General'}`, // Custom email subject
+                    _template: 'table' // Formsubmit template
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.success === "true" || response.ok) {
+                setStatus('success');
+                setFormData({ fullName: '', email: '', phone: '', subject: '', message: '' }); // Reset form
+                // Reset success message after 5 seconds
+                setTimeout(() => setStatus(''), 5000);
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            setStatus('error');
+        }
+    };
+
     return (
         <section className={`w-full font-poppins ${isPage ? 'pt-32 pb-20 min-h-screen bg-gray-50' : 'py-20 bg-white'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
@@ -69,7 +125,10 @@ const Contact = ({ isPage = false }) => {
 
                     {/* Right Side: Contact Form */}
                     <div className="lg:w-3/5 p-10 md:p-14 bg-white">
-                        <form className="space-y-8">
+                        <form className="space-y-8" onSubmit={handleSubmit}>
+                            {/* Hidden Captcha Field for FormSubmit */}
+                            <input type="hidden" name="_captcha" value="false" />
+
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                 {/* Full Name */}
                                 <div className="relative">
@@ -79,6 +138,9 @@ const Contact = ({ isPage = false }) => {
                                     <input
                                         type="text"
                                         id="fullName"
+                                        value={formData.fullName}
+                                        onChange={handleChange}
+                                        required
                                         className="w-full py-2 border-b border-gray-300 focus:border-[#019688] outline-none transition-colors duration-300 bg-transparent text-navy font-medium placeholder-gray-300"
                                         placeholder="Full Name"
                                     />
@@ -92,6 +154,9 @@ const Contact = ({ isPage = false }) => {
                                     <input
                                         type="email"
                                         id="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
                                         className="w-full py-2 border-b border-gray-300 focus:border-[#019688] outline-none transition-colors duration-300 bg-transparent text-navy font-medium placeholder-gray-300"
                                         placeholder="yourname@example.com"
                                     />
@@ -107,6 +172,8 @@ const Contact = ({ isPage = false }) => {
                                     <input
                                         type="tel"
                                         id="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
                                         className="w-full py-2 border-b border-gray-300 focus:border-[#019688] outline-none transition-colors duration-300 bg-transparent text-navy font-medium placeholder-gray-300"
                                         placeholder="+91 ..."
                                     />
@@ -120,16 +187,18 @@ const Contact = ({ isPage = false }) => {
                                     <div className="relative">
                                         <select
                                             id="subject"
+                                            value={formData.subject}
+                                            onChange={handleChange}
+                                            required
                                             className="w-full py-2 border-b border-gray-300 focus:border-[#019688] outline-none transition-colors duration-300 bg-transparent text-navy font-medium cursor-pointer appearance-none"
-                                            defaultValue=""
                                         >
                                             <option value="" disabled className="text-gray-300">Select a subject</option>
-                                            <option value="general">General Inquiry</option>
-                                            <option value="nursing">Nursing Services</option>
-                                            <option value="appointment">Book an Appointment</option>
-                                            <option value="feedback">Feedback / Suggestion</option>
-                                            <option value="careers">Careers</option>
-                                            <option value="other">Other</option>
+                                            <option value="General Inquiry">General Inquiry</option>
+                                            <option value="Nursing Services">Nursing Services</option>
+                                            <option value="Book an Appointment">Book an Appointment</option>
+                                            <option value="Feedback / Suggestion">Feedback / Suggestion</option>
+                                            <option value="Careers">Careers</option>
+                                            <option value="Other">Other</option>
                                         </select>
                                         <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
                                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,6 +217,9 @@ const Contact = ({ isPage = false }) => {
                                 <textarea
                                     id="message"
                                     rows="1"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
                                     className="w-full py-2 border-b border-gray-300 focus:border-[#019688] outline-none transition-colors duration-300 bg-transparent text-navy font-medium placeholder-gray-300 resize-none min-h-[40px] focus:min-h-[100px]"
                                     placeholder="Write your message"
                                     style={{ transition: 'min-height 0.3s ease' }}
@@ -156,13 +228,28 @@ const Contact = ({ isPage = false }) => {
                                 ></textarea>
                             </div>
 
+                            {/* Status Messages */}
+                            {status === 'success' && (
+                                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                                    <strong className="font-bold">Success!</strong>
+                                    <span className="block sm:inline ml-1">Your message has been sent successfully. We'll get back to you soon!</span>
+                                </div>
+                            )}
+                            {status === 'error' && (
+                                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                                    <strong className="font-bold">Error!</strong>
+                                    <span className="block sm:inline ml-1">Something went wrong. Please try again or email us directly at ccareping@gmail.com.</span>
+                                </div>
+                            )}
+
                             {/* Submit Button */}
                             <div className="pt-4">
                                 <button
                                     type="submit"
-                                    className="px-8 py-3 bg-[#019688] hover:bg-[#00796b] text-white font-bold rounded-md shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
+                                    disabled={status === 'sending'}
+                                    className={`px-8 py-3 bg-[#019688] hover:bg-[#00796b] text-white font-bold rounded-md shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 ${status === 'sending' ? 'opacity-75 cursor-not-allowed' : ''}`}
                                 >
-                                    Send Message
+                                    {status === 'sending' ? 'Sending...' : 'Send Message'}
                                 </button>
                             </div>
                         </form>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import HeroBanner from '../assets/hero-banner.jpg';
+import HeroImage from '../assets/hero-image.png';
 
 const Hero = () => {
     return (
@@ -36,13 +36,23 @@ const Hero = () => {
                 </div>
             </div>
 
-            {/* Right Image Content */}
-            <div className="w-full md:w-1/2 relative h-[50vh] md:h-screen order-1 md:order-2 flex justify-center items-center bg-gray-50 p-6 md:p-0">
-                <div className="relative w-full max-w-lg md:max-w-xl lg:max-w-2xl transform md:translate-x-0">
+            {/* Right Image Content - Redesigned */}
+            <div className="w-full md:w-1/2 relative h-[60vh] md:h-screen order-1 md:order-2 flex justify-center items-end md:items-center overflow-hidden">
+
+                {/* Abstract Background Shapes */}
+                <div className="absolute top-0 right-0 w-[120%] h-[100%] bg-primary rounded-bl-[200px] md:rounded-bl-[300px] translate-x-[20%] -translate-y-[10%] md:translate-y-0 z-0"></div>
+                <div className="absolute top-10 right-10 w-32 h-32 bg-white/10 rounded-full z-0 blur-2xl"></div>
+                <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-white/10 rounded-full z-0 blur-3xl"></div>
+
+                {/* Secondary Lighter Shape for Depth */}
+                <div className="absolute top-0 right-[-10%] w-[120%] h-[110%] bg-light-teal/20 rounded-bl-[250px] md:rounded-bl-[350px] translate-x-[25%] -z-10"></div>
+
+                <div className="relative w-full max-w-lg md:max-w-2xl lg:max-w-3xl z-10 px-4 md:px-0 mt-auto flex justify-center md:block">
                     <img
-                        src={HeroBanner}
-                        alt="CarePing Hero"
-                        className="w-full h-auto object-cover rounded-2xl shadow-2xl z-10 relative"
+                        src={HeroImage}
+                        alt="Medical Professionals"
+                        className="w-full h-auto object-contain drop-shadow-2xl animate-fade-in-up"
+                        style={{ maxHeight: '90vh' }}
                     />
                 </div>
             </div>

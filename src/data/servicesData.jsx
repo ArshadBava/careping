@@ -16,7 +16,7 @@ import Physiotherapy from '../assets/Services/Physiotherapy.jpg';
 import Mentalhealth from '../assets/Services/mentalhealth.jpg';
 import Speechandhearing from '../assets/Services/SpeechHearingTherapy.jpg';
 import Vacuumbloodtherapy from '../assets/Services/vaccumetherappy.jpg';
-import Labservices from '../assets/Services/labServices.jpg';
+import labservices from '../assets/Services/labServices.jpg';
 import Onlinepharmacy from '../assets/Services/OnlinePharmacy.jpg';
 import Medicalequipment from '../assets/Services/MedicalEquipments.jpg';
 
@@ -75,7 +75,7 @@ export const servicesData = [
         shortDesc: "Home sample collection and fast results.",
         fullDesc: "Care Ping makes diagnostic testing simple, fast, and reliable. With our partnered laboratories and home sample collection options, you can book tests, track reports, and consult doctors — all within one secure platform. From routine blood tests to advanced diagnostics, we ensure accurate results, timely updates, and complete transparency. Our goal is to bring lab-quality precision to your doorstep, so you can focus on your health with confidence and ease.",
         icon: TestTube,
-        image: Labservices
+        image: labservices
     },
     {
         id: 8,

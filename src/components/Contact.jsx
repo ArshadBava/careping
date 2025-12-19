@@ -80,7 +80,7 @@ const Contact = ({ isPage = false }) => {
                                         type="text"
                                         id="fullName"
                                         className="w-full py-2 border-b border-gray-300 focus:border-[#019688] outline-none transition-colors duration-300 bg-transparent text-navy font-medium placeholder-gray-300"
-                                        placeholder="John Doe"
+                                        placeholder="Full Name"
                                     />
                                 </div>
 
@@ -93,7 +93,7 @@ const Contact = ({ isPage = false }) => {
                                         type="email"
                                         id="email"
                                         className="w-full py-2 border-b border-gray-300 focus:border-[#019688] outline-none transition-colors duration-300 bg-transparent text-navy font-medium placeholder-gray-300"
-                                        placeholder="john@example.com"
+                                        placeholder="yourname@example.com"
                                     />
                                 </div>
                             </div>

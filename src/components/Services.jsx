@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { servicesData } from '../data/servicesData';
 import { X } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -15,6 +15,13 @@ const Services = () => {
         setSelectedService(null);
         document.body.style.overflow = 'unset';
     };
+
+    // Cleanup overflow on component unmount
+    useEffect(() => {
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, []);
 
     return (
         <section id="services-section" className="w-full py-20 bg-gray-50 font-poppins">
@@ -92,7 +99,7 @@ const Services = () => {
                                     <p className="text-gray-600 text-base leading-relaxed mb-6">
                                         {selectedService.fullDesc}
                                     </p>
-                                    <Link to="/contact">
+                                    <Link to="/contact" onClick={closeModal}>
                                         <button className="bg-primary text-white font-semibold py-2 px-6 rounded-full w-fit hover:bg-opacity-90 transition-all">
                                             Book Now
                                         </button>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import heroBanner from '../assets/HeroBanner.jpg';
+import HeroBanner from '../assets/HeroBanner.jpg';
 
 const Hero = () => {
     return (
@@ -40,7 +40,7 @@ const Hero = () => {
             <div className="w-full md:w-1/2 relative h-[50vh] md:h-screen order-1 md:order-2 flex justify-center items-center bg-gray-50 p-6 md:p-0">
                 <div className="relative w-full max-w-lg md:max-w-xl lg:max-w-2xl transform md:translate-x-0">
                     <img
-                        src={heroBanner}
+                        src={HeroBanner}
                         alt="CarePing Hero"
                         className="w-full h-auto object-cover rounded-2xl shadow-2xl z-10 relative"
                     />

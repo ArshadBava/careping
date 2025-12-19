@@ -16,7 +16,7 @@ import Physiotherapy from '../assets/Services/Physiotherapy.jpg';
 import Mentalhealth from '../assets/Services/mentalhealth.jpg';
 import Speechandhearing from '../assets/Services/SpeechHearingTherapy.jpg';
 import Vacuumbloodtherapy from '../assets/Services/vaccumetherappy.jpg';
-import labservices from '../assets/Services/labServices.jpg';
+import labservices from '../assets/Services/LabServices.jpg';
 import Onlinepharmacy from '../assets/Services/OnlinePharmacy.jpg';
 import Medicalequipment from '../assets/Services/MedicalEquipments.jpg';
 

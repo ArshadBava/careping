@@ -130,8 +130,8 @@ const NursingServices = () => {
                                                 }}
                                             />
                                             {/* Floating Badge */}
-                                            <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-navy shadow-sm z-20">
-                                                CarePing
+                                            <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm z-20">
+                                                Care<span className="text-secondary">Ping</span>
                                             </div>
                                         </div>
 

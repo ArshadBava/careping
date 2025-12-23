@@ -160,7 +160,7 @@ const PostOpCareContent = () => {
                         "Educate the patient for self-care at home"
                     ].map((item, index) => (
                         <li key={index} className="flex items-center gap-2 text-green-800">
-                            <span className="text-green-600">🎯</span>
+                            <span className="text-green-600">●</span>
                             <span>{item}</span>
                         </li>
                     ))}

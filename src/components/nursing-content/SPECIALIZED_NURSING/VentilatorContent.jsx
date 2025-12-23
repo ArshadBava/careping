@@ -211,7 +211,7 @@ const VentilatorContent = () => {
                         "Anxiety and communication problems"
                     ].map((item, index) => (
                         <li key={index} className="flex items-center gap-2">
-                            <span className="text-red-500">⚠</span>{item}
+                            <span className="text-red-500">●</span>{item}
                         </li>
                     ))}
                 </ul>

@@ -54,7 +54,7 @@ const Navbar = () => {
                     {/* Left: Logo */}
                     <div className="flex-shrink-0 flex items-center">
                         <Link to="/">
-                            <img src={logo} alt="CarePing Logo" className="h-10 w-auto" />
+                            <img src={logo} alt="CarePing Logo" className="h-16 w-auto" />
                         </Link>
                     </div>
 
@@ -64,6 +64,8 @@ const Navbar = () => {
                         <Link to="/about" className="text-navy hover:text-primary font-medium transition-colors">About Us</Link>
                         <Link to="/services" className="text-navy hover:text-primary font-medium transition-colors">Services</Link>
                         <Link to="/nursing-services" className="text-navy hover:text-primary font-medium transition-colors">Nursing Services</Link>
+                        <Link to="/blog" className="text-navy hover:text-primary font-medium transition-colors">Blog</Link>
+                        <Link to="/contact" className="text-navy hover:text-primary font-medium transition-colors">Contact Us</Link>
                     </div>
 
                     {/* Desktop Right (Login + Get App) */}
@@ -112,6 +114,8 @@ const Navbar = () => {
                         <Link to="/about" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-gray-50 hover:text-primary">About Us</Link>
                         <Link to="/services" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-gray-50 hover:text-primary">Services</Link>
                         <Link to="/nursing-services" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-gray-50 hover:text-primary">Nursing Services</Link>
+                        <Link to="/blog" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-gray-50 hover:text-primary">Blog</Link>
+                        <Link to="/contact" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-gray-50 hover:text-primary">Contact Us</Link>
 
                     </div>
                 </div>

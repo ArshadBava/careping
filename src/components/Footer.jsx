@@ -18,10 +18,9 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
 
                 {/* 1. Logo Section */}
-                <div className="mb-10 transform hover:scale-105 transition-transform duration-300">
+                <div className="mb-10 transform hover:scale-105 transition-transform duration-300 flex flex-col items-center">
                     <Link to="/" onClick={scrollToTop} className="text-3xl font-bold tracking-wider">
-                        <span className="text-white">CARE</span>
-                        <span className="text-primary">PING</span>
+                        <img src={logo} alt="CarePing Logo" className="h-20 w-auto" />
                     </Link>
                 </div>
 
@@ -31,6 +30,7 @@ const Footer = () => {
                     <Link to="/about" className="text-gray-400 hover:text-white transition-colors text-sm font-medium uppercase tracking-wide">About Us</Link>
                     <Link to="/services" className="text-gray-400 hover:text-white transition-colors text-sm font-medium uppercase tracking-wide">Services</Link>
                     <Link to="/nursing-services" className="text-gray-400 hover:text-white transition-colors text-sm font-medium uppercase tracking-wide">Nursing Services</Link>
+                    <Link to="/blog" className="text-gray-400 hover:text-white transition-colors text-sm font-medium uppercase tracking-wide">Blog</Link>
                     <Link to="/contact" className="text-gray-400 hover:text-white transition-colors text-sm font-medium uppercase tracking-wide">Contact</Link>
                 </nav>
 

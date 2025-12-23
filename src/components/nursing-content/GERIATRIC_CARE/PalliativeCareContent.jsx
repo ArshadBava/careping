@@ -98,7 +98,7 @@ const PalliativeCareContent = () => {
                             "Facilitate legacy activities (letters, memory projects, spiritual rituals)"
                         ].map((item, index) => (
                             <li key={index} className="flex items-center gap-2">
-                                <span className="text-secondary">♡</span>
+                                <span className="text-secondary">●</span>
                                 <span>{item}</span>
                             </li>
                         ))}
@@ -115,7 +115,7 @@ const PalliativeCareContent = () => {
                             "Discuss advance directives, living wills, and hospice care"
                         ].map((item, index) => (
                             <li key={index} className="flex items-center gap-2">
-                                <span className="text-secondary">👥</span>
+                                <span className="text-secondary">●</span>
                                 <span>{item}</span>
                             </li>
                         ))}
@@ -168,12 +168,10 @@ const PalliativeCareContent = () => {
             </MobileAccordion>
 
             {/* Summary */}
-            <div className="bg-gray-50 p-6 rounded-2xl shadow-sm border border-gray-100 mt-6 text-center">
-                <h3 className="text-xl font-bold text-gray-700 mb-2">Summary</h3>
-                <p className="text-gray-600 font-medium leading-relaxed">
-                    Palliative and end-of-life care is holistic, patient-centered care that focuses on relief from suffering, emotional support,
-                    and maintaining dignity during serious illness and the final stages of life. Nurses play a key role in symptom management,
-                    emotional support, family education, and advocacy.
+            <div className="bg-green-50 p-6 rounded-2xl shadow-sm border border-green-100 text-center">
+                <h3 className="text-xl font-bold text-green-700 mb-2">Summary</h3>
+                <p className="text-green-800 font-medium leading-relaxed">
+                    Palliative and end-of-life care is holistic, patient-centered care that focuses on relief from suffering, emotional support, and maintaining dignity during serious illness and the final stages of life. Nurses play a key role in symptom management, emotional support, family education, and advocacy.
                 </p>
             </div>
         </div>

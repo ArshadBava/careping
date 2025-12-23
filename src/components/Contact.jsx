@@ -106,7 +106,7 @@ const Contact = ({ isPage = false }) => {
                                 <div className="flex items-start space-x-4">
                                     <Mail className="w-6 h-6 mt-1" />
                                     <a href="mailto:ccareping@gmail.com" className="text-teal-50 hover:text-white transition-colors">
-                                        ccareping@gmail.com
+                                        admin@careping.in
                                     </a>
                                 </div>
 

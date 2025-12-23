@@ -97,7 +97,7 @@ const AboutPage = () => {
                     <img src={logo} alt="CarePing Logo" className="h-20 w-auto" />
                 </motion.div>
                 <h1 className="text-4xl md:text-5xl font-bold text-navy text-center relative pb-4">
-                    About CarePing
+                    About Care Ping
                     <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></span>
                 </h1>
             </motion.header>
@@ -112,7 +112,7 @@ const AboutPage = () => {
                     className="bg-white p-10 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden"
                 >
                     <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-secondary"></div>
-                    <p className="text-gray-600 text-lg md:text-xl leading-loose text-justify">
+                    <p className="text-gray-600 text-lg md:text-xl leading-loose text-left">
                         A dedicated team of licensed physicians, nurses, therapists, and technologists, united by the belief that
                         <span className="font-semibold text-primary"> “Care is just a Ping away”</span>.
                         We’ve combined clinical excellence with secure, user-first digital design to build a platform capable of meeting modern health challenges.
@@ -148,7 +148,7 @@ const AboutPage = () => {
                                 <offer.icon className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
                             </div>
                             <h3 className="font-bold text-lg mb-3 text-navy">{offer.title}</h3>
-                            <p className="text-gray-600 text-sm leading-relaxed text-justify">{offer.desc}</p>
+                            <p className="text-gray-600 text-sm leading-relaxed text-left">{offer.desc}</p>
                         </motion.div>
                     ))}
                 </motion.div>
@@ -186,7 +186,7 @@ const AboutPage = () => {
                                     <div className="w-24 h-24 bg-white border-4 border-secondary/20 rounded-full flex items-center justify-center mb-6 shadow-md z-10">
                                         <step.icon className="w-10 h-10 text-secondary" />
                                     </div>
-                                    <p className="text-gray-700 font-medium text-justify w-full">{step.text}</p>
+                                    <p className="text-gray-700 font-medium text-left w-full">{step.text}</p>
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -221,52 +221,90 @@ const AboutPage = () => {
                                 <item.icon className="w-8 h-8 text-navy" />
                             </div>
                             <h3 className="font-bold text-lg mb-2 text-navy">{item.title}</h3>
-                            <p className="text-sm text-gray-600 text-justify">{item.desc}</p>
+                            <p className="text-sm text-gray-600 text-left">{item.desc}</p>
                         </motion.div>
                     ))}
                 </motion.div>
             </section>
 
             {/* Section F: Mission & Vision */}
-            <section className="bg-navy text-white py-20 mb-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            {/* Section F: Mission & Vision - Modernized */}
+            <section className="relative py-32 overflow-hidden bg-navy">
+                {/* Background Elements */}
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] mix-blend-screen opacity-50 animate-pulse"></div>
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/20 rounded-full blur-[120px] mix-blend-screen opacity-50"></div>
+
+                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8">
                     <motion.div
-                        variants={staggerContainer}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        className="grid grid-cols-1 md:grid-cols-2 gap-12"
+                        variants={fadeInUp}
+                        className="text-center mb-20 max-w-4xl mx-auto"
                     >
-                        {/* Mission */}
+                        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-white tracking-tight">
+                            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary">Mission & Vision</span>
+                        </h2>
+                        <p className="text-gray-300 text-lg md:text-xl font-light leading-relaxed">
+                            Driving compassionate, accessible, and technology-powered healthcare for everyone.
+                        </p>
+                    </motion.div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
+                        {/* Mission Card */}
                         <motion.div
                             variants={cardVariants}
+                            initial="hidden"
+                            whileInView="visible"
                             whileHover="hover"
-                            className="bg-white/10 backdrop-blur-md p-10 rounded-3xl border border-white/20"
+                            viewport={{ once: true }}
+                            className="group relative bg-white/5 backdrop-blur-2xl rounded-[2.5rem] p-10 border border-white/10 shadow-2xl overflow-hidden"
                         >
-                            <div className="flex items-center gap-4 mb-6">
-                                <Target className="w-10 h-10 text-secondary" />
-                                <h2 className="text-3xl font-bold">Our Mission</h2>
+                            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                            <div className="relative z-10">
+                                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary to-secondary/50 flex items-center justify-center mb-8 shadow-lg shadow-secondary/20 group-hover:scale-110 transition-transform duration-300">
+                                    <Target className="w-10 h-10 text-white" />
+                                </div>
+
+                                <h3 className="text-3xl font-bold text-white mb-6 group-hover:text-secondary transition-colors">Our Mission</h3>
+
+                                <p className="text-gray-300 text-lg leading-relaxed">
+                                    We aim to revolutionize home and virtual care by delivering
+                                    <span className="text-white font-semibold"> high-quality, compassionate healthcare </span>
+                                    anywhere, at any time — making personalized medical services
+                                    affordable, accessible, and patient-centred.
+                                </p>
                             </div>
-                            <p className="text-gray-200 text-lg leading-relaxed text-justify">
-                                We aim to revolutionize home and virtual care by delivering high-quality, compassionate healthcare anywhere, at any time - making personalized medical service affordable, accessible, and patient-centred.
-                            </p>
                         </motion.div>
 
-                        {/* Vision */}
+                        {/* Vision Card */}
                         <motion.div
                             variants={cardVariants}
+                            initial="hidden"
+                            whileInView="visible"
                             whileHover="hover"
-                            className="bg-white/10 backdrop-blur-md p-10 rounded-3xl border border-white/20"
+                            viewport={{ once: true }}
+                            className="group relative bg-white/5 backdrop-blur-2xl rounded-[2.5rem] p-10 border border-white/10 shadow-2xl overflow-hidden"
                         >
-                            <div className="flex items-center gap-4 mb-6">
-                                <Globe className="w-10 h-10 text-secondary" />
-                                <h2 className="text-3xl font-bold">Our Vision</h2>
+                            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                            <div className="relative z-10">
+                                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center mb-8 shadow-lg shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
+                                    <Globe className="w-10 h-10 text-white" />
+                                </div>
+
+                                <h3 className="text-3xl font-bold text-white mb-6 group-hover:text-primary transition-colors">Our Vision</h3>
+
+                                <p className="text-gray-300 text-lg leading-relaxed">
+                                    Our vision is to become the world’s most
+                                    <span className="text-white font-semibold"> trusted digital care platform</span>,
+                                    blending leading-edge technology with our excellent team to deliver
+                                    seamless, holistic healthcare for every individual.
+                                </p>
                             </div>
-                            <p className="text-gray-200 text-lg leading-relaxed text-justify">
-                                Our vision is to become the world’s most trusted digital care platform, blending leading-edge technology with our excellent team to ensure seamless, holistic healthcare for every individual.
-                            </p>
                         </motion.div>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -276,7 +314,7 @@ const AboutPage = () => {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="text-3xl font-bold text-center mb-16 text-navy"
+                    className="text-3xl font-bold text-center mb-16 text-navy pt-20"
                 >
                     Our Objectives
                 </motion.h2>
@@ -295,7 +333,7 @@ const AboutPage = () => {
                             className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl border-t-4 border-secondary transition-all"
                         >
                             <h3 className="font-bold text-xl mb-4 text-navy">{obj.title}</h3>
-                            <p className="text-gray-600 leading-relaxed text-justify text-sm">
+                            <p className="text-gray-600 leading-relaxed text-left text-sm">
                                 {obj.desc}
                             </p>
                         </motion.div>

@@ -150,7 +150,7 @@ const TracheostomyContent = () => {
                         "Skin breakdown"
                     ].map((item, index) => (
                         <div key={index} className="flex items-center gap-2 text-sm bg-red-50 p-3 rounded-lg text-gray-800">
-                            <span className="text-red-500">⚠</span>
+                            <span className="text-red-500">●</span>
                             {item}
                         </div>
                     ))}

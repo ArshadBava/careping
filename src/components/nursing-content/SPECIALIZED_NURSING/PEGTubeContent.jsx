@@ -147,7 +147,7 @@ const PEGTubeContent = () => {
                         "Flush with 15–30 mL water between each medication."
                     ].map((item, index) => (
                         <li key={index} className="bg-gray-50 p-3 rounded-lg flex items-center gap-2 border border-gray-100">
-                            <span className="text-secondary font-bold">💊</span>{item}
+                            <span className="text-secondary font-bold"></span>{item}
                         </li>
                     ))}
                 </ul>
@@ -192,7 +192,7 @@ const PEGTubeContent = () => {
                         "Promote patient comfort and safety"
                     ].map((item, index) => (
                         <li key={index} className="flex items-center gap-2 text-green-800">
-                            <span className="text-green-600">🎯</span>
+                            <span className="text-green-600">●</span>
                             <span>{item}</span>
                         </li>
                     ))}

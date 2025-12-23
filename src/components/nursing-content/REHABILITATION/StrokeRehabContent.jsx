@@ -74,7 +74,7 @@ const StrokeRehabContent = () => {
                             "Community rehab programs"
                         ].map((item, index) => (
                             <li key={index} className="flex items-center gap-2 bg-gray-50 p-2 rounded-lg text-sm">
-                                <span className="text-secondary">📍</span>
+                                <span className="text-secondary">●</span>
                                 <span>{item}</span>
                             </li>
                         ))}

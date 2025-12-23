@@ -62,7 +62,7 @@ const PsychiatricNursingContent = () => {
             {/* Principles & Disorders Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <MobileAccordion title="Key Principles" number="3">
-                    <ul className="space-y-2 text-sm">
+                    <ul className="space-y-3 text-sm">
                         {[
                             { title: "Acceptance", desc: "Respect without judgment" },
                             { title: "Confidentiality", desc: "Keep info private" },
@@ -71,9 +71,16 @@ const PsychiatricNursingContent = () => {
                             { title: "Therapeutic comm.", desc: "Purposeful interactions" },
                             { title: "Individualization", desc: "Tailored care" }
                         ].map((item, index) => (
-                            <li key={index} className="flex gap-2">
-                                <span className="font-bold text-primary">{item.title}:</span>
-                                <span className="text-gray-600">{item.desc}</span>
+                            <li
+                                key={index}
+                                className="grid grid-cols-[150px_1fr] gap-3"
+                            >
+                                <span className="font-semibold text-primary">
+                                    {item.title}
+                                </span>
+                                <span className="text-gray-600">
+                                    {item.desc}
+                                </span>
                             </li>
                         ))}
                     </ul>
@@ -86,7 +93,10 @@ const PsychiatricNursingContent = () => {
                             "Schizophrenia", "Substance Use", "Personality Disorders",
                             "PTSD", "Dementia/Delirium"
                         ].map((tag, i) => (
-                            <span key={i} className="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold border border-purple-100">
+                            <span
+                                key={i}
+                                className="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold border border-purple-100"
+                            >
                                 {tag}
                             </span>
                         ))}
@@ -94,11 +104,12 @@ const PsychiatricNursingContent = () => {
                 </MobileAccordion>
             </div>
 
+
             {/* Therapeutic Communication */}
             <MobileAccordion title="Therapeutic Communication" number="5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="bg-green-50 p-4 rounded-xl border border-green-100">
-                        <h4 className="font-bold text-green-800 mb-2">DO Use:</h4>
+                        <h4 className="font-bold text-green-800 mb-2">DOs :</h4>
                         <ul className="list-check space-y-1 text-sm text-green-700">
                             <li>✓ Active listening</li>
                             <li>✓ Reflection</li>
@@ -132,9 +143,9 @@ const PsychiatricNursingContent = () => {
 
                 <MobileAccordion title="Ethical & Legal Aspects" number="7">
                     <ul className="space-y-3 text-sm">
-                        <li className="flex items-center gap-2"><span className="text-secondary text-lg">⚖️</span> <span>Patients’ rights (privacy, consent)</span></li>
-                        <li className="flex items-center gap-2"><span className="text-secondary text-lg">⚖️</span> <span>Restraints only as last resort</span></li>
-                        <li className="flex items-center gap-2"><span className="text-secondary text-lg">⚖️</span> <span>Legal dutes in suicide/aggression risk</span></li>
+                        <li className="flex items-center gap-2"><span className="text-secondary text-lg">●</span> <span>Patients’ rights (privacy, consent)</span></li>
+                        <li className="flex items-center gap-2"><span className="text-secondary text-lg">●</span> <span>Restraints only as last resort</span></li>
+                        <li className="flex items-center gap-2"><span className="text-secondary text-lg">●</span> <span>Legal dutes in suicide/aggression risk</span></li>
                     </ul>
                 </MobileAccordion>
             </div>

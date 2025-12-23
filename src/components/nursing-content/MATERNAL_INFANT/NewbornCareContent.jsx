@@ -145,7 +145,7 @@ const NewbornCareContent = () => {
                         "Immunization schedule"
                     ].map((item, index) => (
                         <li key={index} className="flex items-center gap-2 text-yellow-800">
-                            <span className="text-yellow-600">💡</span>
+                            <span className="text-yellow-600">●</span>
                             <span>{item}</span>
                         </li>
                     ))}
@@ -153,11 +153,10 @@ const NewbornCareContent = () => {
             </MobileAccordion>
 
             {/* Summary */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center mt-6">
-                <h3 className="text-xl font-bold text-navy mb-2">Summary</h3>
-                <p className="text-gray-600 font-medium leading-relaxed">
-                    Newborn care is a comprehensive approach to ensure the baby’s physical stability, safety, and healthy development.
-                    Nurses play a critical role in monitoring, feeding support, hygiene, immunization, and parent education to promote a healthy start to life.
+            <div className="bg-green-50 p-6 rounded-2xl shadow-sm border border-green-100 text-center">
+                <h3 className="text-xl font-bold text-green-700 mb-2">Summary</h3>
+                <p className="text-green-800 font-medium leading-relaxed">
+                    Newborn care is a comprehensive approach to ensure the baby’s physical stability, safety, and healthy development. Nurses play a critical role in monitoring, feeding support, hygiene, immunization, and parent education to promote a healthy start to life.
                 </p>
             </div>
         </div>

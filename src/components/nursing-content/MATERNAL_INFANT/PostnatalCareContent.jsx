@@ -116,7 +116,7 @@ const PostnatalCareContent = () => {
                         "Educate mother for self-care and family planning"
                     ].map((item, index) => (
                         <li key={index} className="flex items-center gap-2 text-green-800">
-                            <span className="text-green-600">🎯</span>
+                            <span className="text-green-600">●</span>
                             <span>{item}</span>
                         </li>
                     ))}
@@ -124,11 +124,10 @@ const PostnatalCareContent = () => {
             </MobileAccordion>
 
             {/* Summary */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center mt-6">
-                <h3 className="text-xl font-bold text-navy mb-2">Summary</h3>
-                <p className="text-gray-600 font-medium leading-relaxed">
-                    Postnatal care for the mother is a holistic approach that addresses physical recovery, emotional well-being, and education.
-                    Nurses play a critical role in monitoring, supporting, and guiding the mother to ensure a safe and healthy postpartum period.
+            <div className="bg-green-50 p-6 rounded-2xl shadow-sm border border-green-100 text-center">
+                <h3 className="text-xl font-bold text-green-700 mb-2">Summary</h3>
+                <p className="text-green-800 font-medium leading-relaxed">
+                    Postnatal care for the mother is a holistic approach that addresses physical recovery, emotional well-being, and education. Nurses play a critical role in monitoring, supporting, and guiding the mother to ensure a safe and healthy postpartum period.
                 </p>
             </div>
         </div>

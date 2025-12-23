@@ -104,7 +104,7 @@ const VaccinationsContent = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <MobileAccordion title="Documentation" number="5">
                     <ul className="list-disc pl-5 space-y-1 text-sm text-gray-600">
-                        <li>Date, time, vaccine name, batch #</li>
+                        <li>Date, time, vaccine name, batch number</li>
                         <li>Dose, route, site</li>
                         <li>Reactions observed</li>
                         <li>Signature</li>

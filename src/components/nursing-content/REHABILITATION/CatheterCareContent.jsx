@@ -21,7 +21,7 @@ const CatheterCareContent = () => {
                     {[
                         { title: "Indwelling (Foley)", desc: "Inserted through urethra, has balloon.", uses: ["Surgery", "Retention", "Critically ill", "Accurate measurement"] },
                         { title: "Intermittent (In-and-Out)", desc: "Temporary insertion to empty bladder.", uses: ["Short-term collection", "Spinal cord injury", "Self-catheterization"] },
-                        { title: "Suprapubic", desc: "Inserted through abdominal wall.", uses: ["Urethral injury/obstruction", "Long-term use"] }
+                        { title: "Suprapubic", desc: "Inserted through abdominal wall.", uses: ["Urethral injury or obstruction", "Long-term use"] }
                     ].map((type, i) => (
                         <div key={i} className="bg-light-teal/30 p-4 rounded-xl border border-teal-100">
                             <h4 className="font-bold text-navy mb-2">{type.title}</h4>

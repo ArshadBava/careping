@@ -25,7 +25,7 @@ const WoundCareContent = () => {
                     </ul>
                 </MobileAccordion>
                 <MobileAccordion title="Stages of Healing" number="2">
-                    <ol className="space-y-3 text-sm relative border-l-2 border-gray-200 ml-3 pl-5">
+                    <ol className="space-y-3 text-sm relative border-gray-200 ml-3 pl-4">
                         {[
                             { name: "Hemostasis", desc: "Bleeding stops" },
                             { name: "Inflammatory", desc: "Body fights infection" },

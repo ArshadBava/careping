@@ -12,6 +12,7 @@ import ScrollToTop from './components/ScrollToTop';
 import NursingServices from './pages/NursingServices';
 import NursingServiceDetail from './pages/NursingServiceDetail';
 import BlogPage from './pages/BlogPage';
+import BlogDetail from './components/BlogDetail';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/nursing-services" element={<NursingServices />} />
         <Route path="/nursing-services/:id" element={<NursingServiceDetail />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogDetail />} />
       </Routes>
       <Footer />
     </Router>

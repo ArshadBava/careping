@@ -1,13 +1,42 @@
-import React from 'react';
-import { blogData } from '../data/BlogData';
+import React, { useEffect, useState } from 'react';
+import { getBlogs } from '../services/api';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Clock, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const BlogSection = () => {
+    const [blogs, setBlogs] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchBlogs = async () => {
+            try {
+                const response = await getBlogs();
+                setBlogs(response.data);
+            } catch (error) {
+                console.error("Error fetching blogs:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchBlogs();
+    }, []);
+
+    if (loading) {
+        return <div className="py-24 text-center text-gray-500">Loading insights...</div>;
+    }
+
+    if (blogs.length === 0) {
+        return null; // Or show empty state
+    }
+
     // Show only the first 4 blog posts (1 featured + 3 side list)
-    const featuredPost = blogData[0];
-    const sidePosts = blogData.slice(1, 4);
+    const featuredPost = blogs[0];
+    const sidePosts = blogs.slice(1, 4);
+
+    const formatDate = (dateString) => {
+        return new Date(dateString).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    };
 
     return (
         <section className="py-24 bg-gray-50 font-poppins text-navy">
@@ -47,16 +76,16 @@ const BlogSection = () => {
 
                             <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
                                 <span className="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">
-                                    {featuredPost.category}
+                                    Healthcare
                                 </span>
                                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-snug group-hover:text-secondary transition-colors">
                                     {featuredPost.title}
                                 </h3>
                                 <div className="flex items-center gap-4 text-gray-300 text-sm mb-6">
-                                    <span className="flex items-center gap-1"><User className="w-4 h-4" /> {featuredPost.author}</span>
-                                    <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {featuredPost.date}</span>
+                                    <span className="flex items-center gap-1"><User className="w-4 h-4" /> CarePing Team</span>
+                                    <span className="flex items-center gap-1"><Clock className="w-4 h-4" /> {formatDate(featuredPost.created_at)}</span>
                                 </div>
-                                <Link to="/blog">
+                                <Link to={`/blog/${featuredPost.slug}`}>
                                     <button className="bg-white/20 backdrop-blur-md border border-white/30 text-white px-6 py-3 rounded-full font-medium hover:bg-white hover:text-navy transition-all">
                                         Read Editorial
                                     </button>
@@ -83,14 +112,16 @@ const BlogSection = () => {
                                 </div>
                                 <div>
                                     <div className="flex items-center gap-3 text-xs text-gray-500 mb-2">
-                                        <span className="font-bold text-primary">{post.category}</span>
+                                        <span className="font-bold text-primary">Wellness</span>
                                         <span>•</span>
-                                        <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {post.date}</span>
+                                        <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {formatDate(post.created_at)}</span>
                                     </div>
-                                    <h4 className="text-lg font-bold text-navy leading-snug group-hover:text-primary transition-colors cursor-pointer line-clamp-2">
-                                        {post.title}
-                                    </h4>
-                                    <Link to="/blog" className="text-sm font-medium text-gray-400 mt-2 inline-flex items-center hover:text-primary">
+                                    <Link to={`/blog/${post.slug}`}>
+                                        <h4 className="text-lg font-bold text-navy leading-snug group-hover:text-primary transition-colors cursor-pointer line-clamp-2">
+                                            {post.title}
+                                        </h4>
+                                    </Link>
+                                    <Link to={`/blog/${post.slug}`} className="text-sm font-medium text-gray-400 mt-2 inline-flex items-center hover:text-primary">
                                         Read Story <ArrowUpRight className="w-3 h-3 ml-1" />
                                     </Link>
                                 </div>

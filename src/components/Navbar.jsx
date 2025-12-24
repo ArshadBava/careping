@@ -47,7 +47,11 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 font-poppins transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-white shadow-sm'}`}>
+        <nav className={`fixed top-0 left-0 right-0 z-50 font-poppins transition-all duration-300 
+            ${scrolled
+                ? 'bg-white/70 backdrop-blur-xl shadow-md border-b border-white/20'
+                : 'bg-white/30 backdrop-blur-md border-b border-white/10'
+            }`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
 
@@ -64,7 +68,7 @@ const Navbar = () => {
                         <Link to="/about" className="text-navy hover:text-primary font-medium transition-colors">About Us</Link>
                         <Link to="/services" className="text-navy hover:text-primary font-medium transition-colors">Services</Link>
                         <Link to="/nursing-services" className="text-navy hover:text-primary font-medium transition-colors">Nursing Services</Link>
-                        <Link to="/blog" className="text-navy hover:text-primary font-medium transition-colors">Blog</Link>
+                        <Link to="/blog" className="text-navy hover:text-primary font-medium transition-colors">Blogs</Link>
                         <Link to="/contact" className="text-navy hover:text-primary font-medium transition-colors">Contact Us</Link>
                     </div>
 
@@ -108,13 +112,13 @@ const Navbar = () => {
 
             {/* Mobile Menu Dropdown */}
             {isOpen && (
-                <div className="md:hidden bg-white shadow-lg border-t border-gray-100 absolute w-full left-0">
+                <div className="md:hidden bg-white/90 backdrop-blur-xl shadow-lg border-t border-white/20 absolute w-full left-0">
                     <div className="px-4 pt-2 pb-6 space-y-2">
-                        <Link to="/" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-gray-50 hover:text-primary">Home</Link>
-                        <Link to="/about" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-gray-50 hover:text-primary">About Us</Link>
-                        <Link to="/services" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-gray-50 hover:text-primary">Services</Link>
-                        <Link to="/nursing-services" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-gray-50 hover:text-primary">Nursing Services</Link>
-                        <Link to="/blog" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-gray-50 hover:text-primary">Blog</Link>
+                        <Link to="/" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-white/50 hover:text-primary transition-colors">Home</Link>
+                        <Link to="/about" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-white/50 hover:text-primary transition-colors">About Us</Link>
+                        <Link to="/services" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-white/50 hover:text-primary transition-colors">Services</Link>
+                        <Link to="/nursing-services" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-white/50 hover:text-primary transition-colors">Nursing Services</Link>
+                        <Link to="/blog" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-white/50 hover:text-primary transition-colors">Blogs</Link>
                         <Link to="/contact" onClick={() => setIsOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-navy hover:bg-gray-50 hover:text-primary">Contact Us</Link>
 
                     </div>
